@@ -1,6 +1,6 @@
 # LCD Library for 8-bit PIC
 
-This is a powerfull library for 8-bit **PIC** microcontrollers writen in **XC8** language. You can use it in 8-bit microcontroller with small changes. Create project in **MPLAB IDE** and follow steps below.
+This is a powerful library for 8-bit **PIC** microcontrollers writen in **XC8** language. You can use it in 8-bit microcontroller with small changes. Create project in **MPLAB IDE** and follow steps below.
 
 [For read post about this visit our site.](https://trion-projects.blogspot.com/2020/01/lcd-interfacing-with-pic-using-xc8.html)
 
