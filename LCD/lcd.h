@@ -45,8 +45,6 @@ uint8_t lcdDisplayControl = 0b00001100;
 uint8_t lcdCursorDisplayShift = 0b00010000;
 
 void LCDInitialize();
-uint8_t LCDReadByte();
-uint8_t LCDReadNibble();
 void LCDSendByte(uint8_t reg, uint8_t byte);
 void LCDSendNibble(uint8_t nibble);
 void LCDCommand(uint8_t byte);
@@ -64,7 +62,7 @@ void LCDShiftDisplayLeft(void);
 void LCDShiftCursorRight(void);
 void LCDShiftCursorLeft(void);
 void LCDSetPos(uint8_t x, uint8_t y);
-void LCDPrintChar(uint8_t byte, uint8_t y, uint8_t x);
+void LCDPrintChar(uint8_t ch, uint8_t y, uint8_t x);
 void LCDPrintString(uint8_t *string, uint8_t y, uint8_t x);
 
 #endif
