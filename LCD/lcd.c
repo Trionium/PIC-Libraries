@@ -188,7 +188,7 @@ void LCDSetPos(uint8_t x, uint8_t y) {
 // Print one character to lcd
 void LCDPrintChar(uint8_t ch, uint8_t y, uint8_t x) {
     LCDSetPos(x, y);
-    LCDSendByte(1, byte);
+    LCDSendByte(1, ch);
 }
 
 // Print string to lcd
