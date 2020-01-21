@@ -47,11 +47,13 @@ void LCDInitialize() {
 // Clear display
 void LCDClearDisplay(void) {
     LCDSendByte(0, ClearDisplay);
+    __delay_ms(2);
 }
 
 // Return cursor to home
 void LCDReturnHome(void) {
     LCDSendByte(0, ReturnHome);
+    __delay_ms(2);
 }
 
 // Toggle display
@@ -184,7 +186,7 @@ void LCDSetPos(uint8_t x, uint8_t y) {
 }
 
 // Print one character to lcd
-void LCDPrintChar(uint8_t byte, uint8_t y, uint8_t x) {
+void LCDPrintChar(uint8_t ch, uint8_t y, uint8_t x) {
     LCDSetPos(x, y);
     LCDSendByte(1, byte);
 }
