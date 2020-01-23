@@ -1,8 +1,8 @@
 # LCD Library for 8-bit PIC
 
-This is a powerful library for 8-bit **PIC** microcontrollers writen in **XC8** language. You can use it in 8-bit microcontroller with small changes. Create project in **MPLAB IDE** and follow steps below.
+This is a powerful library for 8-bit **PIC** microcontrollers written in **XC8** language. You can use it in an 8-bit microcontroller with small changes. Create a project in **MPLAB IDE** and follow the steps below.
 
-[For read post about this visit our site.](https://trion-projects.blogspot.com/2020/01/lcd-interfacing-with-pic-using-xc8.html)
+[For a reading post about this visit our site.](https://trion-projects.blogspot.com/2020/01/lcd-interfacing-with-pic-using-xc8.html)
 
 ## Step 1
 Firstly, you must create `config.h` file in **Header Files** and include it in `main.c` file.  Write your  **Configuration Bit Settings** and  `#define _XTAL_FREQ FrequencyInHertz` in `config.h` file. After that add include statements. For LCD library you need;
@@ -13,7 +13,7 @@ Firstly, you must create `config.h` file in **Header Files** and include it in `
 In this file you should include all of used libraries. Example (`config.h` file) is shown for PIC16F628A microcontroller.
 
 ## Step 2
-Install `lcd.c` and `lcd.h` files and move them to your `*.X` directory. Then in **Projects** panel right click to `Header Files` and click `Add Existing Item...`. Select `lcd.h` file and click **Select**. Do same thing for `lcd.c` file but add it to **Source Files**.
+Install `lcd.c` and `lcd.h` files and move them to your `*.X` directory. Then in **Projects** panel right-click to `Header Files` and click `Add Existing Item...`. Select `lcd.h` file and click **Select**. Do the same thing for `lcd.c` file but add it to **Source Files**.
 
 ## Step 3
 Finally, go into `lcd.h` file and edit section between stars for your microcontroller. You must use one PORT for LCD.
@@ -37,7 +37,7 @@ To clear display use this function. To execute this function you need about 2ms.
 To move curser home use this function. To execute this function you need about 2ms.
 
 ### LCDDisplayToggle(time, n)
-When you need display toggle use this function. `time` is between 0 and 256. `n` is toggle number. Each time multiplied by 100ms. See example below.
+When you need display toggle to use this function. `time` is between 0 and 256. `n` is toggle number. Each time multiplied by 100ms. See the example below.
 
 ``` c
 void main(void) {
@@ -54,7 +54,7 @@ void main(void) {
 Turn display on when display is off or stay display at on state. This function can be used for toggle display with **LCDDisplayOff()** function.
 
 ### LCDDisplayOff()
-Turn display off when display is on or stay display at off state.
+Turn display off when the display is on or stay display at off state.
 
 ### LCDCursorOn()
 To turn on cursor use this function.
@@ -81,18 +81,21 @@ To shift cursor right use this function.
 To shift cursor left use this function.
 
 ### LCDPrintChar(ch, y, x)
-If you want to print one character to spesific position use this function. `ch` is char which you want to print. `y` is line number. First line is 1, second line is 2.  `x` is position of line.  `x` must be between 0 and 17. Which can be minimum 0 and maximum 16.
+If you want to print one character to a specific position use this function. `ch` is char which you want to print. `y` is line number. The first line is 1, the second line is 2.  `x` is the position of the line.  `x` must be between 0 and 17. Which can be a minimum of 1 and a maximum of 16.
 
 ### LCDPrintString(string, y, x)
-If you want to print string to spesific position use this function. `string` is data which you want to print. `y` is line number. First line is 1, second line is 2.  `x` is position of line.  `x` must be between 0 and 17. Which can be minimum 0 and maximum 16. See examples below:
+If you want to print the string to a specific position use this function. `string` is data which you want to print. `y` is line number. The first line is 1, the second line is 2.  `x` is the position of the line.  `x` must be between 0 and 17. Which can be a minimum of 1 and a maximum of 16. To center string, you could write 0 to x position and string will be centered. See examples below:
 
-You can write string direct to function.
+You can write string directly to function.
 
 ``` c
 void main(void) {
       LCDInitialize();
       while(1) {
+        // Right justified string
         LCDPrintString("Trion Projects", 1, 1);
+        // Centered string
+        LCDPrintString("Trion Projects", 2, 0);
       }
 }
 ```
@@ -109,9 +112,9 @@ void main(void) {
 ```
 
 ## Print Numbers
-If you want to print some numbers, firstly, you need to convert it string and then pass it to function. Let see example below:
+If you want to print some numbers, firstly, you need to convert it a string and then pass it to function. Let see the example below:
 
-This example shows how to print variable integer number to lcd.
+This example shows how to print variable integer numbers to LCD.
 
 ``` c
   void main(void) {
@@ -127,7 +130,7 @@ This example shows how to print variable integer number to lcd.
   }
 ```
 
-This example shows how to print variable double number to lcd.
+This example shows how to print variable double numbers to LCD.
 
 ``` c
 void main(void) {
