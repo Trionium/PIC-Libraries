@@ -194,7 +194,16 @@ void LCDPrintChar(uint8_t ch, uint8_t y, uint8_t x) {
 // Print string to lcd
 void LCDPrintString(uint8_t *string, uint8_t y, uint8_t x) {
     // Set position
-    LCDSetPos(x, y);
+    // If x = 0, then print string to center
+    if(x == 0) {
+        for(uint8_t i = 0; i < 17; i++, x++) {
+            if(string[i] == '\0') break;
+        }
+        LCDSetPos((18-x)/2, y);
+    } else {
+        LCDSetPos(x, y);
+    }
+    
     // Write each char
     for(uint8_t i = 0; i < 17; i++) {
         if(string[i] == '\0') break;
